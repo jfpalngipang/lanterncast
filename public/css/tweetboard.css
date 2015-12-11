@@ -1,0 +1,41 @@
+body {
+  font-family: "Helvetica Neue", Helvetica;
+  width: 90%;
+  background-color: black;
+  margin: 25px auto 0 auto;
+  color: white;
+}
+
+.flip-container {
+	perspective: 1000;
+}
+
+.flipper {
+  transform-style: preserve-3d;
+}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+  backface-visibility: hidden;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	position: absolute;
+	top: 0;
+  left: 0;
+  text-align: center;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+  background-color: red;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+  background-color: green;
+}
